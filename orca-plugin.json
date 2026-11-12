@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-plugin.v2.schema.json",
+  "manifestVersion": 2,
+  "id": "orca-svg-annotate",
+  "name": "SVG Annotate",
+  "version": "0.1.0",
+  "description": "Mark up an SVG exported from Figma (pins, pen, highlight, rectangles, ellipses, arrows, text), write what each mark means, and copy one prompt for your AI agent. No Figma MCP needed.",
+  "author": {
+    "name": "jolynestarchaser",
+    "url": "https://github.com/jolynestarchaser"
+  },
+  "repository": "https://github.com/jolynestarchaser/orca-svg-annotate",
+  "homepage": "https://github.com/jolynestarchaser/orca-svg-annotate",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "cover": {
+    "path": "assets/cover.png",
+    "alt": "A sign-in and dashboard design marked with a rectangle, pin, arrow, highlight and ellipse, with each note listed on the right"
+  },
+  "screenshots": [
+    {
+      "path": "assets/screenshots/2-prompt.png",
+      "alt": "The notes panel with the prompt preview open, listing each mark with its layer id, position and note",
+      "caption": "One prompt with every note, its layer ids and position"
+    }
+  ],
+  "engines": {
+    "orca": ">=1.4.248"
+  },
+  "execution": "sandboxed-ui",
+  "pluginApi": 1,
+  "contributes": {
+    "customEditors": [
+      {
+        "id": "orca-svg-annotate",
+        "title": "SVG Annotate",
+        "extensions": [
+          ".svg"
+        ],
+        "priority": "option",
+        "entry": "editor/main.ts",
+        "frame": "isolated"
+      }
+    ]
+  }
+}
